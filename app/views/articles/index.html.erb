@@ -1,0 +1,56 @@
+<h1> Great Southern Hotel Sligo Super League</h1>
+
+<strong style="font-size:20px">Live Games: </strong><br>
+<textarea cols="30" rows="10" name= "LiveGames">
+
+</textarea> 
+<br>
+<br>
+<br>
+<br>
+<strong style="font-size:20px">League Table: </strong><br>
+
+
+</p>
+<table>
+	<tr>
+		<th>Team</th>
+		<th>P</th>
+		<th>W</th>
+		<th>D</th>
+		<th>L</th>
+		<th>F</th>
+		<th>A</th>
+		<th>GD</th>
+		<th>Points</th>
+
+		<th colspan="9"></th>
+	</tr>
+
+
+
+	<% @articles.each do |article| %>	
+	
+		<tr>
+			<td><%= article.title %></td>
+			<td><%= article.games_played %></td>
+			<td><%= article.games_won %></td>
+			<td><%= article.games_drew %></td>
+			<td><%= article.games_lost %></td>
+			<td><%= article.goals_for %></td>
+			<td><%= article.goals_against %></td>
+			<td><%= article.goal_difference %></td>
+			<td><%= article.total_points %></td>
+			<td><%= link_to 'Show', article_path(article) %></td>
+			<td><%= link_to 'Edit', edit_article_path(article) %></td>
+			<td><%= link_to 'Delete', article_path(article),
+					method: :delete,
+					data: { confirm: 'Are you sure?'} %></td>
+			
+		</tr>
+	<% end %>
+</table>
+<br>
+<%= link_to 'Enter New Team', new_article_path %>
+<%= link_to 'Back', welcome_index_path %>
+<%= link_to 'Users', users_path %>

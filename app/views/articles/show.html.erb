@@ -1,0 +1,55 @@
+<p>
+	<strong>Team:</strong>
+	<%= @article.title %>
+</p>
+
+<p>
+	<strong>Played:</strong>
+	<%= @article.games_played %>
+</p>
+
+<p>
+	<strong>Won:</strong>
+	<%= @article.games_won %>
+</p>
+
+<p>
+	<strong>Drew:</strong>
+	<%= @article.games_drew %>
+</p>
+
+<p>
+	<strong>Lost:</strong>
+	<%= @article.games_lost %>
+</p>
+
+<p>
+	<strong>For:</strong>
+	<%= @article.goals_for %>
+</p>
+
+<p>
+	<strong>Against:</strong>
+	<%= @article.goals_against %>
+</p>
+
+<p>
+	<strong>Difference:</strong>
+	<%= @article.goal_difference %>
+</p>
+
+<p>
+	<strong>Points:</strong>
+	<%= @article.total_points %>
+</p>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment: </h2>
+<%= render 'comments/form' %>
+
+
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
